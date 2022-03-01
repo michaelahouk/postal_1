@@ -6,6 +6,8 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+import javax.net.ssl.HttpsURLConnection;
+
 import org.json.JSONObject;
 
 public class App
@@ -14,7 +16,7 @@ public class App
         try {
             //Open a connection to wikipedia
             URL url = new URL("https://en.wikipedia.org/w/api.php?action=parse&section=0&prop=text&format=json&page=Cincinnati");
-            HttpURLConnection con = (HttpURLConnection) url.openConnection();
+            HttpsURLConnection con = (HttpsURLConnection) url.openConnection();
 
             //Set method type
             con.setRequestMethod("GET");
